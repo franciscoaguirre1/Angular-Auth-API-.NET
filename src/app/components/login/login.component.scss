@@ -1,18 +1,16 @@
 .outer {
     height: 100vh;
-    background: linear-gradient(
-        0deg,
-        hsl(240deg 3% 94%) 0%,
-        hsl(239deg 40% 91%) 11%,
-        hsl(239deg 57% 87%) 22%,
-        hsl(238deg 66% 84%) 33%,
-        hsl(237deg 72% 80%) 44%,
-        hsl(235deg 76% 76%) 56%,
-        hsl(234deg 79% 72%) 67%,
-        hsl(231deg 80% 67%) 78%,
-        hsl(228deg 82% 61%) 89%,
-        hsl(221deg 85% 52%) 100%
-      );
+    background-image: linear-gradient(45deg,
+            hsl(234deg 100% 50%) 0%,
+            hsl(253deg 100% 54%) 11%,
+            hsl(261deg 100% 53%) 22%,
+            hsl(268deg 100% 52%) 33%,
+            hsl(273deg 100% 50%) 44%,
+            hsl(277deg 100% 50%) 56%,
+            hsl(281deg 100% 50%) 67%,
+            hsl(285deg 100% 50%) 78%,
+            hsl(288deg 100% 50%) 89%,
+            hsl(291deg 100% 50%) 100%);
 }
 
 .panel-heading {
@@ -54,8 +52,8 @@ a:hover {
     color: #4343ff;
 }
 
-input [type = 'text'],
-input [type = 'password'] {
+input [type='text'],
+input [type='password'] {
     border: none;
     outline: none;
     box-shadow: none;
@@ -82,7 +80,7 @@ img {
 }
 
 .bordert:after {
-    content: "or connect with"; 
+    content: "or connect with";
     position: absolute;
     top: -13px;
     left: 33%;

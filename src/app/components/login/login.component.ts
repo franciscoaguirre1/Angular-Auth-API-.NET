@@ -9,10 +9,10 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  type:string = "password";
-  isText : boolean = false;
+  type: string = "password";
+  isText: boolean = false;
   eyeIcon: string = "fa fa-eye slash";
-  loginForm! : FormGroup;
+  loginForm!: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
@@ -25,24 +25,30 @@ export class LoginComponent implements OnInit {
 
   hideShowPass() {
     this.isText = !this.isText;
-    this.isText? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
-    this.isText? this.type = "text" : this.type = "password"
+    this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
+    this.isText ? this.type = "text" : this.type = "password"
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
+      // send the object to database
       console.log(this.loginForm.value);
     } else {
-      console.log("Form is not valid");
+      // throw the error using toaster and with required fields
+      this.validateAllFormFields(this.loginForm);
+      alert("Your form is invalid");
     }
 
   }
 
-  private validateAllFormsFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(element => {
-      const control = formGroup.get;
-      if(control instanceof FormControl) {
-        control.markAsDirty({onlySelf:true});      } // me quede en el min 20 de la parte 2 de https://www.youtube.com/watch?v=p9ScsROLjdI&t=835s
+  private validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsDirty({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control)
+      }
     });
   }
 
