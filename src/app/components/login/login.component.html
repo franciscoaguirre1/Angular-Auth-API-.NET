@@ -11,14 +11,14 @@
               <div class="form-group pt-3">
                 <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required', 'username')">
                   <span class="fa fa-user p-2"></span>
-                  <input formControlName="username" type="text" placeholder="Username" />
+                  <input formControlName="username" type="text" placeholder="Username" style="border: none;" />
                 </div>
               </div>
               <small *ngIf=" loginForm.controls['username'].dirty && loginForm.hasError('required', 'username')" class="text-danger">*Username is required</small>
               <div class="form-group pt-3">
                 <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">
                   <span class="fa fa-lock p-2"></span>
-                  <input formControlName="password" [type]="type" placeholder="Password" />
+                  <input formControlName="password" [type]="type" placeholder="Password" style="border: none;" />
                   <span (click)="hideShowPass()" class="fa {{ eyeIcon }}"></span>
                 </div>
               </div>
@@ -37,8 +37,7 @@
           </div>
           <div class="mx-3 my-2 py-2 bordert">
             <div class="text-center py-3">
-              <a href="https://www.facebook.com" target="_blank" class="px-2">
-                <img src="https://www.vectorico.com/download/social_media/Facebook-Logo-Square.jpg" alt="" /></a>
+              <a href="https://www.facebook.com" target="_blank" class="px-2" style="color: #0D6EFD; font-size: 40px; justify-content: baseline; align-items: end;"><i class="fa-brands fa-facebook"></i></a>
               <a href="https://www.google.com" target="_blank" class="px-2">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="" /></a>
               <a href="https://github.com" target="_blank" class="px-2">
